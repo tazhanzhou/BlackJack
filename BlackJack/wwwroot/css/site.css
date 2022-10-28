@@ -1,37 +1,240 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
+
+
+/* General */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    color: white;
+    background-color: #052522;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
+.my-link {
+    color: yellow;
+}
+
+    .my-link:hover {
+        color: darkorange;
+    }
+
+.body-content { /* for all pages */
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.index-page-container,
+.placebet-page-container,
+.game-page-container,
+.about-page-container,
+.contact-page-container {
+    padding: 120px 30px 20px 30px;
+    background-size: cover;
+    min-height: 870px;
+    background-image: url(../images/table.jpg);
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.game-page-container {
+    background-image: url(../images/table.jpg);
+    padding-top: 80px;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+footer {
+    background-color: #222222;
+    padding: 20px 50px;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+    footer p, footer a, footer a:hover {
+        color: #9d9d9d;
     }
+
+
+.button {
+    background-color: #2f4f04; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+
+
+/* Index, About */
+
+.my-index-title {
+}
+
+.my-index-desc {
+    padding-bottom: 15px;
+}
+
+#instructions {
+    padding: 40px 15px 0 15px;
+}
+
+#about {
+    padding: 52px 15px 0 15px;
+}
+
+.my-about-desc {
+    line-height: 1.3em;
+}
+
+
+
+/* Game */
+.my-game-rows {
+    margin-left:40px;
+    min-height: 245px;
+}
+
+.game-middle-column {
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    min-height: 220px;
+    border: 1px solid yellow;
+    border-radius: 10px;
+}
+
+.my-vertical-center {
+    padding-top: 90px;
+}
+
+.my-status-message {
+    color: yellow;
+    padding-bottom: 10px;
+    -webkit-animation: zoomIn 1.5s ease-out;
+    animation: zoomIn 1.5s ease-out;
+}
+
+.my-hand-value {
+    padding: 10px;
+    color: yellow;
+    font-weight: bold;
+}
+
+.card-image {
+    -webkit-box-shadow: -5px 0px 10px -2px black;
+    box-shadow: -5px 0px 10px -2px black;
+    display: inline;
+}
+
+    /* The First Card in Hand */
+    .card-image:nth-of-type(1) {
+        /* box-shadow: 0 0 0 0 black; */
+    }
+
+    /* Every Other Card in Hand */
+    .card-image:not(:first-of-type) {
+        margin-left: -117px;
+    }
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .h1, .h3 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .game-page-container {
+        min-height: unset;
+    }
+
+        .game-page-container .my-vertical-center,
+        .game-page-container .h3 {
+            font-size: 1em;
+        }
+
+        .game-page-container .h1 {
+            font-size: 2em;
+        }
+
+        .game-page-container .my-text-sm-right {
+            text-align: right;
+            padding-right: 0;
+        }
+
+        .game-page-container .my-text-sm-left {
+            text-align: left;
+            padding-left: 0;
+        }
+
+        .game-page-container .btn-lg {
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+        }
+
+        .game-page-container .form-group {
+            margin: 0 !important;
+        }
+
+        .game-page-container .my-vertical-center {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-bottom: 0;
+        }
+
+        .game-page-container .my-game-rows {
+            min-height: unset;
+        }
+
+        .game-page-container .my-hand-value {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .game-page-container .game-middle-column {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 10px 10px 15px 10px;
+            min-height: unset;
+        }
+
+    /* Cards */
+
+    .my-dealer-cards, .my-player-cards, .my-player-cards-no-animation {
+        height: unset;
+        overflow: visible;
+    }
+
+        .my-dealer-cards .card-image:nth-of-type(3), .my-player-cards .card-image:last-of-type {
+            animation-name: unset;
+        }
+
+    .my-cards-container {
+        /*        max-width: 300px;*/
+        max-width: 150px; /* smaller cards on phones */
+        margin: 0 auto;
+    }
+
+    .card-image {
+        max-width: 80px !important; /* smaller cards on phones */
+        display: inline;
+        margin-left: 0 !important;
+        margin-top: -88px;
+    }
+
+        /* The 1st and 2nd cards */
+        .card-image:first-of-type, .card-image:nth-of-type(2) {
+            margin-top: 0;
+        }
+
+        /* Even cards */
+        .card-image:nth-of-type(2n+2) {
+            /* margin-left: -117px !important; */
+            margin-left: -65px !important; /* smaller cards on phones */
+        }
+}
+
+

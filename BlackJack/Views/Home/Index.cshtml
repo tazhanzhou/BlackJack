@@ -2,89 +2,112 @@
     ViewData["Title"] = "Home Page";
 }
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h2>Dealer Hand</h2>
+<div class="game-page-container">
+    <div class="row">
+        <div class="col">
+
+            <!-- ROW 1 -->
+            <div class="row my-game-rows">
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["dc1"]" class="img-responsive" />
+                    <div class="col-xs-12 col-sm-3 h3 my-vertical-center">
+                        <p>Dealer Hand</p>
                     </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["dc2"]" class="img-responsive" />
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["dc3"]" class="img-responsive" />
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["dc4"]" class="img-responsive" />
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["dc5"]" class="img-responsive" />
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["dc6"]" class="img-responsive" />
+                    <div class="col-xs-12 col-sm-6 my-dealer-cards">
+                        <div class="row my-cards-container">
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["dc1"]" class="img-responsive"/>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["dc2"]" class="img-responsive" />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["dc3"]" class="img-responsive" />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["dc4"]" class="img-responsive"  />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["dc5"]" class="img-responsive" />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["dc6"]" class="img-responsive" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <h2>My Hand</h2>
+
+            <!-- ROW 2 -->
+            <div class="row my-game-rows">
+                <div class="col-xs-12 col-sm-3 my-vertical-center">
+                    <p>Control Panel</p>
+                    <div>
+                        <label>
+                            My Account: $
+                        </label>
+                        <label>
+                            @TempData["myAccount"]
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            My Bet: $
+                        </label>
+                        <label>
+                            @TempData["myBet"]
+                        </label>
+                        <input id="btBet" type="button" class="button" value="Bet +5$" onclick="location.href='@Url.Action("Bet5", "Home")'" />
+                    </div>
+                    <div>
+                        <input type="button" class="button" value="NewGame" onclick="location.href='@Url.Action("NewGame", "Home")'" />
+                        <input type="button" class="button" value="Hit" onclick="location.href='@Url.Action("Hit", "Home")'" />
+                        <input type="button" class="button" value="Stand" onclick="location.href='@Url.Action("Stand", "Home")'" />
+                        <input type="button" class="button" value="Deal" onclick="location.href='@Url.Action("Deal", "Home")'" />
+                    </div>
+                </div>
+                <div class="col-md-d">
+                    <p>@TempData["resultMessage"]</p>
+                    <p>@TempData["alertMessage"]</p>
+                </div>
+            </div>
+
+            <!-- ROW 3 -->
+            <div class="row my-game-rows">
                 <div class="row">
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["mc1"]" class="img-responsive" />
+                    <div class="col-xs-12 col-sm-3 h3 my-vertical-center">
+                        <p>My Hand</p>
                     </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["mc2"]" class="img-responsive" />
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["mc3"]" class="img-responsive" />
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["mc4"]" class="img-responsive" />
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["mc5"]" class="img-responsive" />
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <img src="@TempData["mc6"]" class="img-responsive" />
+                    <div class="col-xs-12 col-sm-6 my-player-cards">
+                        <div class="row my-cards-container">
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["mc1"]" class="img-responsive" />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["mc2"]" class="img-responsive" />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["mc3"]" class="img-responsive" />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["mc4"]" class="img-responsive" />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["mc5"]" class="img-responsive" />
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <img src="@TempData["mc6"]" class="img-responsive" />
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<div class="row">
-    <div class="col-md-6">
-        <h2>Control Panel</h2>
-        <div>
-            <label>
-                My Account: $
-            </label>
-            <label>
-                @TempData["myAccount"]
-            </label>
-        </div>
-        <div>
-            <label>
-                My Bet: $
-            </label>
-            <label>
-                @TempData["myBet"]
-            </label>
-            <input id="btBet" type="button" value="Bet +5$"  onclick="location.href='@Url.Action("Bet5", "Home")'" />
-        </div>
-        <div>
-            <input type="button" value="NewGame" onclick="location.href='@Url.Action("NewGame", "Home")'" />
-            <input type="button" value="Hit" onclick="location.href='@Url.Action("Hit", "Home")'" />
-            <input type="button" value="Stand" onclick="location.href='@Url.Action("Stand", "Home")'"/>
-            <input type="button" value="Deal"  onclick="location.href='@Url.Action("Deal", "Home")'" />
-        </div>
-    </div>
-    <div class="col-md-d">
-        <h4>@TempData["resultMessage"]</h4>
-        <h4>@TempData["alertMessage"]</h4>
+
     </div>
 </div>
-@if (ViewBag.WarningMessage!=null)
+</div>
+@if (ViewBag.WarningMessage != null)
 {
     <script type="text/javascript">
         window.onload = function () {

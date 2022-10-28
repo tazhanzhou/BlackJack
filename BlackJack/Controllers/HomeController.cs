@@ -15,6 +15,7 @@ namespace BlackJack.Controllers
         static BlackJackGame game;
         bool firstTurn;
         string imageLocation;
+ 
         public IActionResult Index()
         {
             return View();
